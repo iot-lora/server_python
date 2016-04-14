@@ -1,6 +1,6 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
-# 搭配 LAB02 Arduino 的上傳資料
+# 搭配 LAB01 Arduino 的上傳資料 “33/88"
 import paho.mqtt.client as mqtt
 import json
 import ConfigParser                                             # 匯入 配置檔 解析模塊
