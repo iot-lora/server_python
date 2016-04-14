@@ -1,5 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
+# LAB03中 用可變電阻當成 偵測器的輸入，轉動可變電阻可得到 0-100% 的數值。仍保留
+# 增加一個按鈕，連續按壓5秒以上，發送一個 button down 事件通知。
 
 import paho.mqtt.client as mqtt
 import json
@@ -7,15 +9,15 @@ import ConfigParser                                             # 匯入 配置�
 from os.path import expanduser
 # 處理 giot credentials 設定值
 home = expanduser("~")
-default_value = "dummy"
+default_value = "default"
 default_identity_file = home + "/.giot/credentials"
 config = ConfigParser.ConfigParser()
 config.read(default_identity_file)
 HostName = config.get(default_value, 'hostname')
-PortNumber= config.get(default_value 'portnumber')
-Topic = config.get(default_value 'topic')
-UserName = config.get(default_value 'username')
-Password = config.get(default_value 'password')
+PortNumber = config.get(default_value, 'portnumber')
+Topic = config.get(default_value, 'topic')
+UserName = config.get(default_value, 'username')
+Password = config.get(default_value, 'password')
 
 
 # The callback for when the client receives a CONNACK response from the server.

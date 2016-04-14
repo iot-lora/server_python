@@ -1,5 +1,6 @@
 #! /usr/bin/python
-
+# -*- coding: utf8 -*-
+# 搭配 LAB02 Arduino 的上傳資料
 import paho.mqtt.client as mqtt
 import json
 import ConfigParser                                             # 匯入 配置檔 解析模塊
@@ -18,10 +19,10 @@ default_identity_file = home + "/.giot/credentials"
 config = ConfigParser.ConfigParser()
 config.read(default_identity_file)
 HostName = config.get(default_value, 'hostname')
-PortNumber= config.get(default_value 'portnumber')
-Topic = config.get(default_value 'topic')
-UserName = config.get(default_value 'username')
-Password = config.get(default_value 'password')
+PortNumber= config.get(default_value, 'portnumber')
+Topic = config.get(default_value, 'topic')
+UserName = config.get(default_value, 'username')
+Password = config.get(default_value, 'password')
 
 # The callback for when the client receives a CONNACK response from the server.
 def on_connect(client, userdata, flags, rc):

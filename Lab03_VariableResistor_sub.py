@@ -1,5 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf8 -*-
+# 這是用可變電阻當成 偵測器的輸入，轉動可變電阻可得到 0-100% 的數值。
+# LAB03 的內容仍然保留。
 
 import paho.mqtt.client as mqtt
 import json
@@ -12,10 +14,10 @@ default_identity_file = home + "/.giot/credentials"
 config = ConfigParser.ConfigParser()
 config.read(default_identity_file)
 HostName = config.get(default_value, 'hostname')
-PortNumber= config.get(default_value 'portnumber')
-Topic = config.get(default_value 'topic')
-UserName = config.get(default_value 'username')
-Password = config.get(default_value 'password')
+PortNumber= config.get(default_value, 'portnumber')
+Topic = config.get(default_value, 'topic')
+UserName = config.get(default_value, 'username')
+Password = config.get(default_value, 'password')
 
 
 # The callback for when the client receives a CONNACK response from the server.

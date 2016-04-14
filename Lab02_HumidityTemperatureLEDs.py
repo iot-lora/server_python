@@ -1,4 +1,6 @@
 #! /usr/bin/python
+# -*- coding: utf8 -*-
+# 這是一個樹莓派的範例，用LED 燈號表示溫度高低。
 
 # sudo pip install paho-mqtt
 
@@ -15,10 +17,10 @@ default_identity_file = home + "/.giot/credentials"
 config = ConfigParser.ConfigParser()
 config.read(default_identity_file)
 HostName = config.get(default_value, 'hostname')
-PortNumber= config.get(default_value 'portnumber')
-Topic = config.get(default_value 'topic')
-UserName = config.get(default_value 'username')
-Password = config.get(default_value 'password')
+PortNumber= config.get(default_value, 'portnumber')
+Topic = config.get(default_value, 'topic')
+UserName = config.get(default_value, 'username')
+Password = config.get(default_value, 'password')
 
 LED_R = 17
 LED_Y = 27
@@ -63,6 +65,7 @@ def led_on (pin):
 def led_off (pin):
     GPIO.output(pin, GPIO.LOW)
 
+# 鏈接MQTT
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
